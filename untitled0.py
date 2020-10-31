@@ -1,7 +1,11 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Sep 12 11:22:29 2020
+from mcpi.minecraft import Minecraft
+mc = Minecraft.create()
 
-@author: tsais
-"""
+x,y,z = mc.player.getTilePos()
 
+try:
+     blockId = int(input('方塊ID'))
+     mc.setBlock(x,y,z,blockId)
+     
+except:
+    mc.postToChat("???")
